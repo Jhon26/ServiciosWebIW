@@ -32,7 +32,7 @@ import co.edu.udea.dispositivos.exception.ExcepcionPrestamo;
  * @author Santiago
  *
  */
-@Path("administrador")
+@Path("administrador")//Ruta para acceder a este conjunto de servicios web
 @Component
 public class FuncionalidadesRestringidasService {
 	//Logger log = 
@@ -55,8 +55,8 @@ public class FuncionalidadesRestringidasService {
 	
 	
 	//********SERVICIO REGISTRAR INVESTIGADOR***********
-	@POST
-	@Path("registrar-investigador")
+	@POST//Los datos enviados al "Servidor" por el siguiente método viajan en el header, ocultos a la vista del usuario
+	@Path("registrar-investigador")//Ruta para acceder a este servicio
 	/**
 	 * Servicio Web que permite ingresar o registrar en el sistema a un nuevo investigador
 	 * @param id hace referencia a la id del investigador

@@ -2,9 +2,7 @@ package co.edu.udea.dispositivos.ws;
 
 import java.rmi.RemoteException;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.ws.rs.FormParam;
@@ -19,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /*
- * La siguiente clase se pudo importar gracias a que se ligó a este proyecto
+ * Las siguientes clases se pudieron importar gracias a que se ligó a este proyecto
  * el otro proyecto llamado "Dispositivos". Para ligarlo, click derecho en este proyecto,
  * properties, deployment assembly, add, project y luego escoger el proyecto que se desea ligar
  */
@@ -33,13 +31,13 @@ import co.edu.udea.dispositivos.exception.ExcepcionPrestamo;
  * @author lenovo
  *
  */
-@Path("investigador")
+
+@Path("investigador")//Ruta para acceder a este conjunto de servicios web
 @Component 
 public class FuncionalidadesGeneralesService {
 	 
 	@Autowired
 	FuncionalidadesGenerales funcionalidadesGenerales;
-	private DateFormat df = DateFormat.getDateInstance();//Para convertir a Date las fechas que se reciben como String en los FormParams
 	
 	//Getter para usuarioBl. Permite obtener desde afuera de esta clase el valor de esta variable
 	public FuncionalidadesGenerales getUsuarioBl(){
@@ -104,7 +102,7 @@ public class FuncionalidadesGeneralesService {
 	
 	//********SERVICIO SOLICITAR PRESTAMO*************
 	
-	@POST
+	@POST//Los datos enviados al "Servidor" por el siguiente método viajan en el header, ocultos a la vista del usuario
 	@Path("solicitar-prestamo")
 	/**
 	 * Servicio Web que permite solicitar un préstamo de un dispositivo
